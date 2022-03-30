@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Enquete</title>
+</head>
+<body>
+    <legend>Total das votações<legend>
+        
+    <ul>
+        {% for choice in question.choice_set.all_choices %}
+            <li>{{ choice.choice_text }} -- {{ choice.vote }} vote{{ choice.vote|pluralize }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'polls:vote' question.id %}">Votar novamente?</a>
+    <a href="{% url 'polls:index' %}">Ver outra enquete?</a>
+    <a href="{% url 'polls:overall_score' %}">Ver Score Total?</a>
+</body>
+</html>

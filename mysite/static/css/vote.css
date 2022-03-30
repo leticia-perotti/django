@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins&display=swap');
+
+.body{
+    background-color: #FF63F4;
+    height: 35%;    
+}
+
+.content{
+    align-items: center;
+    background-color: #fff;
+    height: 35%;
+    width: 80%;
+    margin:auto;
+    padding: 25px;
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif; 
+    display: flex;
+    align-items: stretch;
+    height: 100vh;
+    border: none;
+    padding: none;      
+}
+.form{
+    flex: 10;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 35px;
+}
+
+.img{
+    flex: 7;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.imagem{
+    height: 35%;
+}

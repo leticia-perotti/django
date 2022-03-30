@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Overall Score</title>
+</head>
+<body>
+    {% if question_all %}
+        <ul>
+            {% for question in question_all %}
+                <li>{{ question.question_text}}</li>
+                
+                <ul>
+                    {% for choice in question_id %}
+                        <li>{{ choice.vote }}</li>
+                    {% endfor %}
+                </ul>
+              
+
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+
+    <a href="{% url 'polls:index' %}">Ver as enquete?</a>
+</body>
+</html>

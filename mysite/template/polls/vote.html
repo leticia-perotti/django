@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote na enquete</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/vote.css' %}" />
+</head>
+<body class="body">
+    <div class="content">
+    <div class="form">
+        <form action="{% url 'polls:vote' question.id %}" method="post">
+            {% csrf_token %}
+            
+                <h1>{{ question.question_text}}</h1>                                    
+    
+                {% for choice in question.choice_set.all %}
+                    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+                    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+                {% endfor %}
+          
+            <input type="submit" value="Vote"> 
+        </form>
+
+    </div>
+
+    <div class="img">
+        <img src="{%static '/img/voto.svg' %}" alt='pessoa votando' class="imagem"/>
+    </div>
+    </div>
+    
+</body>
+</html>

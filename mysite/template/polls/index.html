@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Polls</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/index.css' %}" />
+</head>
+<div class="index">
+    <aside>
+        <img src="{%static '/img/voto.svg' %}" alt='pessoa votando' class="img"/>
+    </aside>
+    <main>
+        <div class="main-content">
+        <h1>Bem vindo ao meu primeiro site em django!!!</h1>
+        <p class="vote">Deseja votar nas enquetes?</p>
+        {% if latest_question_list %}
+            <ul>
+                {% for question in latest_question_list %}
+                    <li><a href="{% url 'polls:vote' question.id %}">{{ question.question_text}}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No polls are available.</p>
+        {% endif %}
+        </div>
+    
+    
+        </main>
+
+</div>
+</html>

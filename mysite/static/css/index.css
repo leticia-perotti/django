@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins&display=swap');
+.index{
+    display: flex;
+    align-items: stretch;
+    height: 100vh;
+    border: none;
+    padding: none;
+}
+    
+    aside{
+        flex: 7;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 120px 80px;
+        border: none;
+    }
+
+        .img{
+            max-width: 75%;
+
+        }
+     
+
+    main{
+        flex: 8;
+        background-color: #FF63F4;
+        padding: 0 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+    }
+
+    .main-content{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    h1{
+        font-size: 35px;
+        margin: 64px 0 24px;
+        font-family: 'Indie Flower', cursive;
+        color: #fff;
+    }
+    p{
+        font-family: 'Poppins', sans-serif;
+        color: #fff;
+        font-size: 25px;
+    }
+    ul{
+        color: #fff;
+    }
+    a{
+        color: #fff;
+        text-decoration: none;
+        font-family: 'Poppins', sans-serif;
+    }
+  
+
+  
