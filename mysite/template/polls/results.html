@@ -1,22 +1,32 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultados da Enquete</title>
+    <title>Ações</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/results.css' %}" />
 </head>
-<body>
-    <h1>Seleciona uma ação</h1>
-        
-    <ul>
-        {% for choice in question.choice_set.all_choices %}
-            <li>{{ choice.choice_text }} -- {{ choice.vote }} vote{{ choice.vote|pluralize }}</li>
-        {% endfor %}
-    </ul>
+<body class="body">
+    <div class="content">
 
-    <a href="{% url 'polls:vote' question.id %}">Votar novamente?</a>
-    <a href="{% url 'polls:index' %}">Ver outra enquete?</a>
-    <a href="{% url 'polls:overall_score' %}">Ver Score Total?</a>
+
+        <h1>Seleciona uma ação</h1>
+            
+        <ul>
+            {% for choice in question.choice_set.all_choices %}
+                <li>{{ choice.choice_text }} -- {{ choice.vote }} vote{{ choice.vote|pluralize }}</li>
+            {% endfor %}
+        </ul>
+
+        <div class="botoes">
+            <a href="{% url 'polls:vote' question.id %}" class="button">Votar novamente?</a>
+            <a href="{% url 'polls:index' %}" class="button">Ver outra enquete?</a>
+            <a href="{% url 'polls:overall_score' %}" class="button">Ver Score Total?</a>
+         </div>
+
+         <img src="{%static '/img/think.svg' %}" alt='pessoa votando' class="imagem"/>
+</div>
 </body>
 </html>
