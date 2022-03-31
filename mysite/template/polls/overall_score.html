@@ -1,16 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Overall Score</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/overall_score.css' %}" />
 </head>
-<body>
-    {% if question_all %}
-        <ul>
+<body class="body">
+    <div class="content">
+        <div class="title">
+            <h1>Total de scores</h1>
+            <img src="{%static '/img/score.svg' %}" alt='estrela' class="imagem"/>
+
+        </div>
+        
+        {% if question_all %}
+        <ul class="listagem1">
             {% for question in question_all %}
-                <li>{{ question.question_text}}</li>
+                <li class="question">{{ question.question_text}}</li>
                 
-                <ul>
+                <ul class="listagem2">
                     {% for choice in question.choice_set.all %}
                         <li>{{ choice.choice_text }} -> {{ choice.vote }} vote{{ choice.vote|pluralize }}</li>
                     {% endfor %}
@@ -19,10 +28,15 @@
 
             {% endfor %}
         </ul>
-    {% else %}
-        <p>No polls are available.</p>
-    {% endif %}
+        {% else %}
+            <p>No polls are available.</p>
+        {% endif %}
+        
+        <footer>
+            <a href="{% url 'polls:index' %}" class="button">Ver as enquete?</a>
+        </footer>
 
-    <a href="{% url 'polls:index' %}">Ver as enquete?</a>
+    </div>
+    
 </body>
 </html>

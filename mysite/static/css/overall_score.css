@@ -1,0 +1,64 @@
+.body{
+    background-color: #FF63F4;
+}
+.content{
+    align-items: center;
+    background-color: #fff;
+    width: 50%;
+    height: 85vh;
+    margin:auto;
+    padding: 25px;
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif; 
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    font-size: 35px;
+}
+.imagem{
+    width: 35px;
+}
+.title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+}
+
+.button{
+    background-color: #FF63F4;
+    height: 15px;
+    width: 35vw;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    padding: 15px;
+    font-size: 15px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin-top: 30%;
+
+    align-items:end;
+    
+}
+.listagem1{
+    display: flex;
+    flex-direction: column;
+    justify-content: self center;
+    gap: 20px;
+}
+.question{
+    font-size: 20px;
+    margin: 10px 0px;
+}
+.listagem2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
