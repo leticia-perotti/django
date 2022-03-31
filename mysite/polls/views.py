@@ -1,7 +1,7 @@
 import re
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
-from django.urls import reverse
+from django.urls import reverse, path
 from .models import Choice, Question
 # Create your views here.
 
@@ -16,10 +16,12 @@ def results(request, question_id):
 
 def overall_score(request):
     question_all = Question.objects.all()
+    question_id = Choice.objects.filter(pk=question_all)
 
-    question_id = Choice.objects.filter(question_id= id)
-    context = {'question_all': question_all, 'question_id' : question_id}
-    return render(request, 'polls/overall_score.html', context)
+    return render(request, 'polls/overall_score.html', {
+        'question_all': question_all,
+        'question_id':question_id
+    })
 
 def vote(request, question_id):
     question = get_object_or_404(Question, pk = question_id)
