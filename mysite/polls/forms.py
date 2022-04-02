@@ -11,5 +11,4 @@ class ChoiceForm(forms.ModelForm):
         model = Choice
         fields = ('choice_text',)
 
-        raise forms.ValidationError('inserido com sucesso')
-        
+       

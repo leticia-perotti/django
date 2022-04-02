@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,19 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width>, initial-scale=1.0">
     <title>Inserir uma as opções</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/vote.css' %}" />
 </head>
-<body>
-    <h1>Insira as opções</h1>
-    <h2>{{ question.question_text}}</h2>
-    <form method="POST">
-        {% csrf_token%}
 
-        {{ form.as_p }}
+    <body class="body">
+        <div class="content">
+            <div class="form">
+                <h1>Insira as opções</h1>
+                <h2>{{ question.question_text}}</h2>
+                <form method="POST">
+                    {% csrf_token%}
 
-        <input type="submit" value="Inserir opção" class="button">
+                    {{ form.as_p }}
 
-    </form>
+                    <input type="submit" value="Inserir opção" class="button">
 
-    <a href="{% url 'polls:index' %}" class="button">Ir para a página inicial</a>
+                </form>
+
+                <a href="{% url 'polls:index' %}" class="button">Ir para a página inicial</a>
+            </div>
+
+            <div class="img">
+                <img src="{%static '/img/voto.svg' %}" alt='pessoa votando' class="imagem"/>
+            </div>
+        </div>
+
 </body>
 </html>

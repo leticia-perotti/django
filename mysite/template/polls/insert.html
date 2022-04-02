@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,16 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width>, initial-scale=1.0">
     <title>Inserir uma enquete</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/vote.css' %}" />
 </head>
-<body>
-    <h1>Deu certo</h1>
-    <form method="POST">
-        {% csrf_token%}
+<body class="body">
+    <div class="content">
+        <div class="form">
+            <h1>Insira a sua pergunta</h1>
+            <form method="POST">
+                {% csrf_token%}
 
-        {{ form.as_p }}
+                {{ form.as_p }}
 
-        <input type="submit" value="Inserir enquete" class="button">
+                <input type="submit" value="Inserir enquete" class="button_form">
 
-    </form>
+            </form>
+        </div>
+
+    <div class="img">
+        <img src="{%static '/img/voto.svg' %}" alt='pessoa votando' class="imagem"/>
+    </div>
 </body>
 </html>
