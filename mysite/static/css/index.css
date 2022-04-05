@@ -61,6 +61,18 @@
         text-decoration: none;
         font-family: 'Poppins', sans-serif;
     }
+    button-insert{
+        border: none;
+        width:85%;
+        height: 35px;
+        background-color: #fff;
+        border-radius: 15px;
+        color: #FF63F4;
+        font-size: 15px;
+        cursor: pointer;
+
+        align-items: inherit;
+    }
   
 
   

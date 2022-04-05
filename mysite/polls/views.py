@@ -90,6 +90,8 @@ def delete(request, question_id):
         question_delete.delete()
         # after deleting redirect to
         # home page
+
+        messages.info(request, "Pergunta excluida com sucesso")
         return HttpResponseRedirect(reverse('polls:index'))
  
     
