@@ -1,4 +1,5 @@
 from datetime import datetime
+from msilib import sequence
 import re
 from django import forms
 from django.shortcuts import get_object_or_404, redirect, render
@@ -65,11 +66,30 @@ def insert_choice(request, question_id):
         if form.is_valid():
             choice = form.save(commit=False)
             choice.question = question
-            choice.save()
-            
+            choice.save()            
             
             return HttpResponseRedirect(reverse('polls:insert_choice', args=(question.id,)), "Dados inseridos")
     
     else:
         form = ChoiceForm()
         return render(request, 'polls/insert_choice.html', {'form' : form})
+    
+def delete(request, question_id):
+   
+    # fetch the object related to passed id
+    question = get_object_or_404(Question, pk = question_id)    
+ 
+ 
+    if request.method =="GET":
+        # delete object
+        
+        choice_delete = Choice.objects.filter(question_id=question_id)
+        question_delete = Question.objects.filter(id=question_id)
+
+        choice_delete.delete()
+        question_delete.delete()
+        # after deleting redirect to
+        # home page
+        return HttpResponseRedirect(reverse('polls:index'))
+ 
+    

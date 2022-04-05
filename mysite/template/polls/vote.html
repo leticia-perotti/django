@@ -25,6 +25,9 @@
             <input type="submit" class="button_vote" value="Vote"> 
         </form>
 
+        <a href="{% url 'polls:index' %}" class="button">Ir para a página inicial</a>
+        <a href="{% url 'polls:delete' question.id %}" class="button">Excluir pergunta</a>
+
     </div>
 
     <div class="img">

@@ -12,4 +12,5 @@ urlpatterns = [
     path('overall_score/', views.overall_score, name='overall_score'),
     path('insert/', views.insert, name='insert'),
     path('<int:question_id>/insert_choice/', views.insert_choice, name='insert_choice'),
+    path('<int:question_id>/delete/', views.delete, name='delete'),
 ]
